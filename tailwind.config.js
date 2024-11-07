@@ -8,7 +8,11 @@ export default {
       "./resources/**/*.vue",
     ],
     theme: {
-      extend: {},
+      extend: {
+        fontFamily: {
+            sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        },
+      },
     },
     plugins: [],
   }
