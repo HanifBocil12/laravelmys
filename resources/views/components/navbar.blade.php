@@ -8,10 +8,16 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <x-nav-link href="/" :Active="request()->is('/')">Home</x-nav-link>
-              <x-nav-link href="/blog" Active="request()->is('blog')">Blog</x-nav-link>
-              <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
-              <a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+              <a href="/" class="rounded-md 
+              {{ request() -> is('/') ? 'bg-gray-900 text-white': 'text-gray-300 hover:bg-gray-700 hover:text-white' }} 
+               px-3 py-2 text-sm font-medium" aria-current="request() -> is('/') ? 'page': null">Home</a>
+              <x-nav-link href="/blog" :active="request() -> is('blog')">Blog</x-nav-link>
+              <x-nav-link href="/about">
+                  About
+              </x-nav-link>
+              <a href="/contact" class="rounded-md 
+              {{ request() -> is('contact') ? 'bg-gray-900 text-white': 'text-gray-300 hover:bg-gray-700 hover:text-white' }} 
+               px-3 py-2 text-sm font-medium" aria-current="request() -> is('contact') ? 'page': null">contact</a>
             </div>
           </div>
         </div>
