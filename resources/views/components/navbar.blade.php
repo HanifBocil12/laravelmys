@@ -9,15 +9,15 @@
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/" class="rounded-md 
-              {{ request() -> is('/') ? 'bg-gray-900 text-white': 'text-gray-300 hover:bg-gray-700 hover:text-white' }} 
+              {{ request()->is('/') ? 'bg-gray-900 text-white': 'text-gray-300 hover:bg-gray-700 hover:text-white' }} 
                px-3 py-2 text-sm font-medium" aria-current="request() -> is('/') ? 'page': null">Home</a>
-              <x-nav-link href="/blog" :active="request() -> is('blog')">Blog</x-nav-link>
-              <x-nav-link href="/about">
+              <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
+              <x-nav-link href="/about" :active="request()->is('about')">
                   About
               </x-nav-link>
               <a href="/contact" class="rounded-md 
-              {{ request() -> is('contact') ? 'bg-gray-900 text-white': 'text-gray-300 hover:bg-gray-700 hover:text-white' }} 
-               px-3 py-2 text-sm font-medium" aria-current="request() -> is('contact') ? 'page': null">contact</a>
+              {{ request()->is('contact') ? 'bg-gray-900 text-white': 'text-gray-300 hover:bg-gray-700 hover:text-white' }} 
+               px-3 py-2 text-sm font-medium" aria-current="request()->is('contact') ? 'page': null">contact</a>
             </div>
           </div>
         </div>
